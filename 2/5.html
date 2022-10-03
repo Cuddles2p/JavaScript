@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /*
+   * Считает сумму переданных аргументов.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   * @return {number} Сумма чисел.
+   */
+  function sum(numb1,numb2) {
+    return numb1 + numb2;
+  }
+
+  /*
+   * Считает разницу переданных аргументов.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   * @return {number} Разница чисел.
+   */
+  function difference(numb1,numb2) {
+    if (numb1 > numb2) {
+      return numb1 - numb2;
+    } else if (numb1 < numb2) {
+      return numb2 - numb1;
+    } else {
+      return Math.abs(null);
+    }
+  }
+
+  /*
+   * Считает произведение переданных аргументов.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   * @return {number} Проиведение чисел.
+   */
+  function multiplication(numb1,numb2) {
+    return numb1 * numb2;
+  }
+
+  /*
+   * Считает частное переданных аргументов.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   * @return {number} Частное чисел.
+   */
+  function division(numb1,numb2) {
+    return numb1 / numb2;
+  }
+
+  /*
+   * Вычисляет операцию, переданную в третий параметр между двумя первыми
+   * аргументами функции.
+   * @param {number} arg1 - Первое число.
+   * @param {number} arg2 - Второе число.
+   * @param {string} operation - Операция, одна из возможных строк:
+   * "+", "-", "*", "/".
+   * @return {number} Результат операции operation над первыми двумя аргументами
+   * функции. Может вернуть NaN, если operation или первые два аргумента заданы
+   * неверно.
+   */
+  function mathOperation(arg1, arg2, operation) {
+    if (operation === '+') {
+      return sum(arg1,arg2);
+    } else if (operation === '-') {
+      return difference(arg1,arg2);
+    } else if (operation === '*') {
+      return multiplication(arg1,arg2);
+    } else if (operation === '/') {
+      return division(arg1,arg2);
+    } else {
+      return NaN;
+    }
+
+    // Когда решил себя перепроверить уже в конце зашел в решение этой задачи и вспомнил про switch и решил сделать два решения , но второе закомиентировать.
+    // switch(operation) {
+    //   case ('+') : return sum(arg1,arg2);
+    //   case ('-') : return difference(arg1,arg2);
+    //   case ('*') : return multiplication(arg1,arg2);
+    //   case ('/') : return division(arg1,arg2);
+    //   default : return NaN;
+    // }
+  }
+</script>
+</body>
+</html>
