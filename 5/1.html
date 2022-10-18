@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class = 'background'>
+<div></div>
+<script>
+    "use strict";
+
+    let table = document.createElement('table');
+    let array = ['','a','b','c','d','e','f','g','h',''];
+    let numbers = ['','1','2','3','4','5','6','7','8',''];
+    let reverseNumber = numbers.reverse();
+
+    function chessDesk() {
+        for (let i = 0; i < 10; ++i) {
+            let tr = document.createElement('tr');
+            table.append(tr);
+            for (let j = 0 ; j < 10; ++j) {
+                let td = document.createElement('td');
+                tr.append(td);
+                td.innerHTML = (i + 1) + j;
+
+                if (td.innerHTML % 2 == 0) {
+                    td.style.backgroundColor = '#000000';
+                }
+
+                if (i == 9 && 0 <= j <= 9) {
+                    td.innerHTML = array[j];
+                } else if (i == 0 && 0 <= j <= 9) {
+                    td.innerHTML = array[j];
+                } else if (i <= 8 && j == 0) {
+                    td.innerHTML = reverseNumber[i];
+                } else if (i <= 8 && j == 9) {
+                    td.innerHTML = reverseNumber [i];
+                } else {
+                    td.innerHTML =''
+                }
+            }
+        }
+        document.querySelector('div').append(table);
+    }
+
+  chessDesk();
+
+  
+</script>
+</body>
+</html>
